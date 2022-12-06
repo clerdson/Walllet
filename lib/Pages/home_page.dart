@@ -12,13 +12,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
         backgroundColor: Colors.black,
-        body: Padding(
-          padding: EdgeInsets.all(29),
-          child: Column(
+      ),
+        backgroundColor: Colors.black,
+        body:
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconButton(onPressed: () {}, icon: Icon(Icons.menu_book)),
+
               Text(
                 'Hello Clerdson',
                 style: TextStyle(color: Colors.white, fontSize: 20),
@@ -27,15 +29,20 @@ class _HomePageState extends State<HomePage> {
                 'Welcome Back',
                 style: TextStyle(color: Colors.white, fontSize: 20),
               ),
-              Container(
-                width: 30,
-                height: 30,
-                color: Colors.amber,
-                child: Icon(
-                  Icons.add,
-                  color: Colors.black,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                Container(
+                  width: 30,
+                  height: 30,
+                  color: Colors.amber,
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.black,
+                  ),
                 ),
-              ),
+              ],)
+              ,
               Container(
                 width: 400,
                 height: 200,
@@ -93,7 +100,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 width: 400,
-                height: 370,
+                height: 360,
                 child: ListView.builder(
                   itemCount: 4,
                   itemBuilder: (context, index) =>Container(
@@ -108,6 +115,11 @@ class _HomePageState extends State<HomePage> {
 
                       },
                       child: Card(
+                        shape: RoundedRectangleBorder( //<-- SEE HERE
+                          side: BorderSide(
+                            color:_expandedIndex ==index? Colors.amber:Colors.black,
+                          ),
+                        ),
                         color:_expandedIndex == index? Colors.grey[900]:Colors.black,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -146,6 +158,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-        ));
+        );
   }
 }
