@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wallet/Pages/login.dart';
-import 'Pages/home_page.dart';
+import 'package:wallet/inject.dart';
+import 'package:wallet/features/graph/presentation/Pages/login.dart';
+import 'features/graph/presentation/Pages/home_page.dart';
 
 void main() {
+  Inject.initialize();
   runApp(const MyApp());
 }
 
@@ -21,4 +23,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

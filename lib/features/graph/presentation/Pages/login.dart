@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallet/Pages/home_page.dart';
+import 'package:wallet/features/graph/presentation/Pages/home_page.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -13,44 +13,6 @@ class _LoginState extends State<Login> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            /*
-    Container(
-        width: double.infinity,
-        color: Colors.white,
-        child:Cadastro()
-      ),
-
-         GetX<MyController>(
-           initState:(state){
-             Future.delayed(Duration(seconds: 8), () {
-  // 5s over, navigate to a new page
- controller.increment();
-});
-
-              },
-              builder: (_)=>    AnimatedContainer(
-              duration: Duration(seconds: 1),
-              margin: EdgeInsets.all(_.margin.toDouble()),
-              decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                 Color(0xff611F83),
-                Color(0xffB866E1),
-
-              ],
-            ),
-
-          ),
-              width: _.width.toDouble(),
-              height: _.height.toDouble(),
-          child: Center(child: Image.asset('logo.png'),),
-         )
-            ),
-
-
-  */
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
