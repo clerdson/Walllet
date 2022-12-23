@@ -57,18 +57,19 @@ class _GraphPageState extends State<GraphPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      height: 300,
-                      width: 400,
-                      child: SfCartesianChart(
-                        primaryXAxis: CategoryAxis(),
+                    Center(
+                      child: SfCircularChart(
                         title: ChartTitle(text: 'quote and timestamp'),
-                        series: <ChartSeries<dynamic, String>>[
-                          LineSeries<dynamic, String>(
+                        legend: Legend(isVisible: true),
+                        series: <PieSeries<dynamic, String>>[
+                          PieSeries<dynamic, String>(
+                              explode: true,
+                              explodeIndex: 0,
                               dataSource: _controller.posts.value,
                               xValueMapper: (dynamic quotes, _) =>
-                                  quotes[1].toString(),
-                              yValueMapper: (dynamic quotes, _) => quotes[0])
+                                  quotes[0].toString(),
+                              yValueMapper: (dynamic quotes, _) => //1)
+                                  _controller.posts.value[0][1])
                         ],
                       ),
                     ),

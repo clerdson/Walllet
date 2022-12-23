@@ -17,8 +17,8 @@ class GetQuoteDataSourceImp implements GetQuoteDataSource {
       List<dynamic> quote = decodedJson["chart"]["result"][0]['indicators']
           ['quote'][0]['${open}'];
 
-      Map<String, dynamic> json = decodedJson["chart"]["result"][0];
-      var posts = [json['timestamp'].cast<int>(), quote];
+      List<dynamic> json = decodedJson["chart"]["result"][0]['timestamp'];
+      var posts = [json, quote];
 
       return Right(posts);
     } else {
